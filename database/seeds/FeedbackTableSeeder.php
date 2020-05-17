@@ -16,7 +16,7 @@ class FeedbackTableSeeder extends Seeder
 
         $feedback = new \App\Feedback();
         $feedback->comment = 'Vollmilch oder Haltbarmilch?';
-        $feedback->user()->associate(2);
+        $feedback->user()->associate(3);
         $feedback->shoppingList()->associate($list);
         $feedback->save();
 
