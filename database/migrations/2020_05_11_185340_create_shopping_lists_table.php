@@ -23,7 +23,7 @@ class CreateShoppingListsTable extends Migration
             $table->foreign('volunteer_id')->references('id')
                 ->on('users')
                 ->onDelete('set null');
-            $table->integer('helpseeker_id')->unsigned()->default(1);
+            $table->integer('helpseeker_id')->unsigned()->nullable();
             $table->foreign('helpseeker_id')->references('id')
                 ->on('users')
                 ->onDelete('cascade');

@@ -20,9 +20,12 @@ class ShoppingListTableSeeder extends Seeder
         $list->shoppingItems()->saveMany($items);
         $list->save();
 
-        //add volunteer and helpseeker
-        $list->helpseeker()->associate(1);
+        //add volunteer
         $list->volunteer()->associate(2);
+        $list->save();
+
+        //add helpseeker
+        $list->helpseeker_id = 1;
         $list->save();
 
         //add feedback
@@ -30,15 +33,14 @@ class ShoppingListTableSeeder extends Seeder
         $list->feedback()->saveMany($feedback);
         $list->save();
 
-
-
         $list2= new \App\ShoppingList;
         $list2->name = "Baumarkt";
+        $list2->helpseeker_id = 1;
         $list2->due_date = new DateTime('2020-05-23');
         $list2->save();
 
         //add volunteer and helpseeker
-        $list2->helpseeker()->associate(1);
+
         $list2->save();
     }
 }
