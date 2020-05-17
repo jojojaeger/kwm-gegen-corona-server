@@ -21,7 +21,7 @@ class ShoppingListTableSeeder extends Seeder
         $list->save();
 
         //add volunteer
-        $list->volunteer()->associate(2);
+        $list->volunteer()->associate(3);
         $list->save();
 
         //add helpseeker
